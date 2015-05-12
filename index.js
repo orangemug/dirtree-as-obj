@@ -6,7 +6,7 @@ module.exports = function toNestedObj(files, opts) {
 
   Object.keys(files).forEach(function(filepath) {
     var tmp = out;
-    var parts = filepath.split(path.sep)
+    var parts = filepath.split(path.sep);
     parts.forEach(function(part, idx) {
       if(idx === parts.length -1) {
         if(opts.removeExt) {
@@ -17,7 +17,7 @@ module.exports = function toNestedObj(files, opts) {
       } else {
         tmp = (tmp[part] = tmp[part] || {});
       }
-    })
+    });
   });
   return out;
 };
